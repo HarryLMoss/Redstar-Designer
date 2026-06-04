@@ -1,0 +1,16 @@
+# Build output
+build/
+
+# CMake user presets (machine-specific)
+CMakeUserPresets.json
+
+# Visual Studio
+.vs/
+*.user
+
+# VSCode
+.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
