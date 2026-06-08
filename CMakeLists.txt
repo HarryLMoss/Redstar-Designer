@@ -15,9 +15,10 @@ juce_generate_juce_header(RedstarDesigner)
 target_sources(RedstarDesigner PRIVATE
     Source/Main.cpp
     Source/MainComponent.cpp
-    Source/Domain/AmpState.cpp)
+    Source/Domain/AmpState.cpp
+    Source/UI/ParameterPanel.cpp)
 
-    target_include_directories(RedstarDesigner PRIVATE Source)
+target_include_directories(RedstarDesigner PRIVATE Source)
 
 target_compile_features(RedstarDesigner PRIVATE cxx_std_17)
 

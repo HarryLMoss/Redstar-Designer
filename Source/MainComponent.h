@@ -8,6 +8,7 @@
 
 #include <JuceHeader.h>
 #include "Domain/AmpState.h"
+#include "UI/ParameterPanel.h"
 
 class MainComponent : public juce::Component
 {
@@ -20,5 +21,7 @@ public:
 
 private:
     AmpState ampState;
+    ParameterPanel parameterPanel { ampState };
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };
