@@ -30,6 +30,12 @@ public:
     // Generate a preset with constrained random values.
     void addRandomPreset();
 
+    // Save the specified preset to an XML file.
+    void savePresetToFile(int index, const juce::File& file);
+
+    // Load a preset from an XML file and add it to the library.
+    bool loadPresetFromFile(const juce::File& file);
+
     juce::ValueTree& getTree() { return library; }
 
 private:

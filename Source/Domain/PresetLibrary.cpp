@@ -4,6 +4,7 @@
 */
 
 #include "PresetLibrary.h"
+#include "PresetSerializer.h"
 
 PresetLibrary::PresetLibrary()
 {
@@ -59,4 +60,21 @@ void PresetLibrary::addRandomPreset()
 
     library.appendChild(preset, nullptr);
     sendChangeMessage();
+}
+
+void PresetLibrary::savePresetToFile(int index, const juce::File& file)
+{
+    if (index >= 0 && index < library.getNumChildren())
+        PresetSerializer::savePreset(library.getChild(index), file);
+}
+
+bool PresetLibrary::loadPresetFromFile(const juce::File& file)
+{
+    auto loaded = PresetSerializer::loadPreset(file);
+    if (! loaded.isValid())
+        return false;
+
+    library.appendChild(loaded, nullptr);
+    sendChangeMessage();
+    return true;
 }
