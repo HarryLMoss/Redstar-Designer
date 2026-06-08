@@ -17,7 +17,8 @@ target_sources(RedstarDesigner PRIVATE
     Source/MainComponent.cpp
     Source/Domain/AmpState.cpp
     Source/UI/ParameterPanel.cpp
-    Source/Domain/PresetLibrary.cpp)
+    Source/Domain/PresetLibrary.cpp
+    Source/UI/PatchBrowser.cpp)
 
 target_include_directories(RedstarDesigner PRIVATE Source)
 
